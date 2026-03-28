@@ -76,6 +76,13 @@ Rate limit keys are scoped per route + IP (`rate_limit:<path>:<ip>`), so limits 
 
 ## Running
 
+### Clone the repo
+
+```bash
+git clone https://github.com/Its-Anay/api-rate-limiter.git
+cd api-rate-limiter
+```
+
 ### With Docker Compose (recommended)
 
 ```bash

@@ -2,5 +2,14 @@ services:
   valkey:
     image: valkey/valkey:7.2
     ports:
-      - "6379:6379"                
+      - "6379:6379"
     restart: always
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - valkey
+    environment:
+      - VALKEY_URL=redis://valkey:6379

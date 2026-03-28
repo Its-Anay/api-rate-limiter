@@ -1,7 +1,8 @@
 import redis.asyncio as redis
+import os
 from contextlib import asynccontextmanager
 
-VALKEY_URL = "redis://localhost:6379"
+VALKEY_URL = os.getenv("VALKEY_URL", "redis://localhost:6379")
 
 @asynccontextmanager
 async def get_valkey():
